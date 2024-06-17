@@ -2,94 +2,54 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    transition: opacity ease-in 0.2s;
+    background-color: #f0f0f0;
 }
-
-body[unresolved] {
-    opacity: 0;
-    display: block;
-    overflow: hidden;
-    position: relative;
-}
-
-.container {
-    flex: 1 1 50%;
-    display: inline-block;
-    margin-bottom: 2em;
+header {
+    background-color: #333;
+    color: #fff;
     text-align: center;
-    padding: 1em;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1em 0;
 }
-
-.controls-form, .controls {
-    padding: 1em;
-    background-color: #fff;
-    margin: 1em 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.controls-form label, .controls label {
-    display: block;
-    margin-bottom: 0.5em;
-    font-weight: bold;
-}
-
-.controls-form input, .controls input {
-    display: block;
-    width: calc(100% - 2em);
-    margin: 0.5em 0 1em 0;
-    padding: 0.5em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.controls-form button, .controls button {
-    display: block;
-    width: 100%;
-    padding: 0.5em;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.controls-form button:hover, .controls button:hover {
-    background-color: #0056b3;
-}
-
-#download-link {
-    display: block;
-    margin: 1em 0;
+nav {
+    background-color: #444;
     text-align: center;
-    color: #007bff;
+    padding: 0.5em 0;
+}
+nav a {
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    padding: 0 1em;
 }
-
-#download-link:hover {
+nav a:hover {
     text-decoration: underline;
 }
-
-.grid-wrapper {
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 1em;
+}
+.gallery-item {
+    width: 30%;
+    margin-bottom: 20px;
+}
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
-.upload-demo-wrap {
-    margin: auto;
-}
-
-.cr-viewport {
-    border: 1px solid black !important;
-}
 
 .hide {
     display: none !important;
