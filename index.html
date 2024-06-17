@@ -107,71 +107,7 @@
 <body>
 </head>
 <body
-    /**
- * hermite-resize - Canvas image resize/resample using Hermite filter with JavaScript.
- * @version v2.2.10
- * @link https://github.com/viliusle/miniPaint
- * @license MIT
- */
-    /*
-     * Hermite resize - fast image resize/resample using Hermite filter.
-     * https://github.com/viliusle/Hermite-resize
-     */
-    function Hermite() {
-        var cores;
-        var workers_archive = [];
-        var workerBlobURL;
 
-        /**
-         * contructor
-         */
-        this.init = function () {
-            cores = navigator.hardwareConcurrency || 4;
-        }();
-
-        /**
-         * Returns CPU cores count
-         * 
-         * @returns {int}
-         */
-        this.getCores = function () {
-            return cores;
-        };
-
-        /**
-         * Hermite resize. Detect cpu count and use best option for user.
-         * 
-         * @param {HtmlElement} canvas
-         * @param {int} width
-         * @param {int} height
-         * @param {boolean} resize_canvas if true, canvas will be resized. Optional.
-         * @param {boolean} on_finish finish handler. Optional.
-         */
-        this.resample_auto = function (canvas, width, height, resize_canvas, on_finish) {
-            var cores = this.getCores();
-
-            if (!!window.Worker && cores > 1) {
-                //workers supported and we have at least 2 cpu cores - using multithreading
-                this.resample(canvas, width, height, resize_canvas, on_finish);
-            }
-            else {
-                //1 cpu version
-                this.resample_single(canvas, width, height, true);
-                if (on_finish != undefined) {
-                    on_finish();
-                }
-            }
-        };
-
-        /**
-         * Hermite resize. Resize actual image.
-         * 
-         * @param {string} image_id
-         * @param {int} width
-         * @param {int} height optional.
-         * @param {int} percentages optional.
-         * @param {string} multi_core optional.
-         */
         this.resize_image = function (image_id, width, height, percentages, multi_core) {
             var img = document.getElementById(image_id);
 
