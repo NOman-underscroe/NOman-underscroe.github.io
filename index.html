@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photography Portfolio</title>
+    <title>Photography Portfolio with Upload</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,26 +17,44 @@
         <a href="#">Contact</a>
     </nav>
     <div class="container">
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/300" alt="Photo 1">
-        </div>
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/300" alt="Photo 2">
-        </div>
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/300" alt="Photo 3">
-        </div>
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/300" alt="Photo 4">
-        </div>
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/300" alt="Photo 5">
-        </div>
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/300" alt="Photo 6">
+        <!-- Image Upload Form -->
+        <form id="imageUploadForm" enctype="multipart/form-data">
+            <input type="file" id="imageFile" name="imageFile" accept="image/*" required>
+            <button type="submit">Upload Image</button>
+        </form>
+        
+        <!-- Display Uploaded Images -->
+        <div id="imageGallery" class="gallery">
+            <!-- Images will be displayed here -->
         </div>
     </div>
     <footer>
+        <p>&copy; 2024 Photography Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- Optional: JavaScript for handling image preview -->
+    <script>
+        // Optional JavaScript for image preview (client-side)
+        const imageFileInput = document.getElementById('imageFile');
+        const imageGallery = document.getElementById('imageGallery');
+
+        imageFileInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.alt = 'Uploaded Image';
+                    imageGallery.appendChild(img);
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
+
         <p>&copy; 2024 Photography Portfolio. All rights reserved.</p>
     </footer>
 </body>
