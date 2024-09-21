@@ -3,56 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photography Portfolio with Upload</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>The Worst Website: Delin Anirudh</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Photography Portfolio</h1>
-    </header>
-    <nav>
-     
-        <a href="README.md">Portfolio</a>
-        <a href="nalphaunumericwithadollar.github.io/index.html">About</a>
-    </nav>
-    <div class="container">
-        <!-- Image Upload Form -->
-        <form id="imageUploadForm" enctype="multipart/form-data">
-            <input type="file" id="imageFile" name="imageFile" accept="image/*" required>
-            <button type="submit">Upload Image</button>
-        </form>
-        
-        <!-- Display Uploaded Images -->
-        <div id="imageGallery" class="gallery">
-            <!-- Images will be displayed here -->
-        </div>
+    <div id="container">
+        <h1 class="blinking">WELCOME TO DELIN ANIRUDH'S AWESOME LIFE!</h1>
+        <img src="https://placekitten.com/300/200" alt="Totally Delin" id="delin-img">
+        <p id="delin-info">Delin Anirudh was a boy who <strong>loved</strong> <em>everything</em>. He is the <span class="highlight">BEST</span>. He once ate 300 pies in one sitting and owns a pet rock named Rocky.</p>
+        <button id="annoying-btn" onclick="makeItWorse()">Make it worse!</button>
+        <div id="annoying-gif"><!-- Random GIFs will appear here --></div>
     </div>
-    <footer>
-        <p>&copy; 2024 Photography Portfolio. All rights reserved.</p>
-    </footer>
-
-    <!-- Optional: JavaScript for handling image preview -->
-    <script>
-        // Optional JavaScript for image preview (client-side)
-        const imageFileInput = document.getElementById('imageFile');
-        const imageGallery = document.getElementById('imageGallery');
-
-        imageFileInput.addEventListener('change', function() {
-            const file = this.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    img.alt = 'Uploaded Image';
-                    imageGallery.appendChild(img);
-                }
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
+    <audio id="background-music" autoplay loop>
+        <source src="annoying.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 </body>
 </html>
+
 
         <p>&copy; 2024 Photography Portfolio. All rights reserved.</p>
     </footer>
