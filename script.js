@@ -1,18 +1,8 @@
-function makeItWorse() {
-    const gifContainer = document.getElementById("annoying-gif");
-    
-    // Add random GIFs
-    const gifs = [
-        'https://media.giphy.com/media/l0HUpt2s9Pclgt9Vm/giphy.gif',
-        'https://media.giphy.com/media/f6pOe5e8ShRhS/giphy.gif',
-        'https://media.giphy.com/media/l3vR7X6As8gblhZ68/giphy.gif'
-    ];
-
-    const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
-    
-    const newGif = document.createElement("img");
-    newGif.src = randomGif;
-    newGif.width = 200;
-    gifContainer.appendChild(newGif);
-}
+// Script to handle the file download
+document.getElementById("downloadBtn").addEventListener("click", function() {
+    const link = document.createElement('a');
+    link.href = '/mnt/data/mickhand.ttf';  // Update with the correct path
+    link.download = 'mickhand.ttf';
+    link.click();
+});
 
