@@ -1,7 +1,8 @@
-// Script to handle the file download
-document.getElementById("downloadBtn").addEventListener("click", function() {
-    const link = document.createElement('a');
-    link.href = 'E:/Mickey/mickhand.ttf';  // Update with the correct path
-    link.download = 'mickhand.ttf';
+document.getElementById("downloadBtn").addEventListener("click", function () {
+    const link = document.createElement("a");
+    link.href = "./mickhand.ttf"; // Ensure "mickhand.ttf" is in the same directory as your HTML
+    link.download = "mickhand.ttf";
+    document.body.appendChild(link); // Add to DOM to trigger the download
     link.click();
+    document.body.removeChild(link); // Clean up
 });
